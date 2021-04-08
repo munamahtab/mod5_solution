@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="text-center">My Info</h1>
+  <div ng-if="myInfoCtrl.userPref === undefined" id="user-info-not-signed-msg"> 
+ <a ui-sref="public.signup">
+           <h1> Not Signed Up Yet. Sign up Now!</h1>
+        </a>
+  </div>
+
+  <table id="user-info-table" ng-if="myInfoCtrl.userPref != undefined" class="table table-borderless">
+    <tr>
+      <td>First Name: </td>
+      <td>{{myInfoCtrl.userPref.firstName}}</td>
+    </tr>
+    <tr>
+      <td>Last Name: </td>
+      <td>{{myInfoCtrl.userPref.lastName}}</td>
+    </tr>
+    <tr>
+      <td>Email Address: </td>
+      <td>{{myInfoCtrl.userPref.email}}</td>
+    </tr>
+    <tr>
+      <td>Phone Number: </td>
+      <td>{{myInfoCtrl.userPref.phone}}</td>
+    </tr>
+    <tr>
+      <td>Favourite Dish: </td>
+      <td><menu-item id="user-info-menu-item" menu-item="myInfoCtrl.userPref.favouriteMenuItem"></menu-item></td>
+    </tr>
+  </table>
+
+</div>
